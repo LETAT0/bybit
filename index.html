@@ -3,6 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful User Information Form</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="tel"], input[type="number"], select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="tel"]:focus, input[type="number"]:focus, select:focus {
+            border: 1px solid #4CAF50;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Personal Information</h1>
+        <form id="userForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+
+            <label for="bank">Bank</label>
+            <select id="bank" name="bank" required>
+                <option value="">Select a bank</option>
+                <option value="CBE">Commercial Bank of Ethiopia (CBE)</option>
+                <option value="Abysinnia">Abysinnia Bank</option>
+            </select>
+
+            <label for="bankAccount">Bank Account Number</label>
+            <input type="number" id="bankAccount" name="bankAccount" placeholder="Enter your bank account number" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="footer">
+            <p>By submitting, you agree to our <a href="#">Privacy Policy</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        // Form validation and submission
+        const form = document.getElementById('userForm');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get the values of the inputs
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const bank = document.getElementById('bank').value;
+            const bankAccount = document.getElementById('bankAccount').value;
+
+            // Basic validation
+            if (!name || !phone || !bank || !bankAccount) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Show success message
+            alert('Form submitted successfully!');
+
+            // Optionally, you can clear the form after submission
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realistic Fingerprint & Eye Contact Scan</title>
     <style>
         body {
